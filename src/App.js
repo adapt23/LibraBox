@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LoginForm from "./LoginForm";
+import SignupForm from "./SignupForm";
+import Dashboard from "./Dashboard";
+
+const ConfirmationPage = () => (
+  <div className="container text-center mt-5">
+    <h2>Inscription réussie ! 🎉</h2>
+    <p>Vous pouvez maintenant vous connecter.</p>
+    <a href="/" className="btn btn-primary">Aller à la connexion</a>
+  </div>
+);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LoginForm />} />
+        <Route path="/signup" element={<SignupForm />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/confirmation" element={<ConfirmationPage />} />
+      </Routes>
+    </Router>
   );
 }
 
-export default App;
+export default App;

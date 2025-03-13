@@ -1,0 +1,76 @@
+/* Global Styles */
+body {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Centering Container */
+  .auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Card Styling */
+  .auth-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .auth-card:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Form Styling */
+  .form-label {
+    font-weight: 500;
+  }
+  
+  .form-control {
+    border-radius: 8px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
+  }
+  
+  .form-control:focus {
+    border-color: #2575fc;
+    box-shadow: 0 0 5px rgba(37, 117, 252, 0.5);
+  }
+  
+  /* Buttons */
+  .btn-primary {
+    background: #2575fc;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background: #1e5bc6;
+  }
+  
+  /* Links */
+  .auth-link {
+    text-decoration: none;
+    color: #2575fc;
+    font-weight: bold;
+  }
+  
+  .auth-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Error Messages */
+  .text-danger {
+    font-size: 0.875rem;
+    margin-top: 5px;
+  }
+  
