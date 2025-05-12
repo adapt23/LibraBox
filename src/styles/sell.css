@@ -1,0 +1,123 @@
+container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
+    border-radius: 10px;
+  }
+  
+  /* Add Book Section and Search Section */
+  h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: white; /* White text color */
+    font-weight: bold;
+  }
+  input[type='text'],
+  input[type='number'] {
+    width: 50%; /* Set width to 50% to make the input smaller */
+    padding: 0.4rem 0.8rem; /* Smaller padding */
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 0.9rem; /* Smaller font size */
+    color: black; /* Set text color to black */
+  }
+  /* Placeholder Styling */
+  input[type='text']::placeholder,
+  input[type='number']::placeholder {
+    color: #888; /* Light grey for placeholder text */
+  }  
+  /* General Layout Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+/* Labels for Input Fields */
+input[type='text'] + label,
+input[type='number'] + label {
+  display: block;
+  font-size: 1rem;
+  color: white; /* White label color */
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+/* Card Styling */
+.card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+/* Card Styling */
+.card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+/* Button Styling */
+.btn {
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  color: white;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .col-md-4 {
+    flex: 0 0 48%;
+    margin-bottom: 1rem;
+  }
+
+  .card-body {
+    padding: 1rem;
+  }
+}
+  /* Adjust input and buttons for small screens */
+  input[type='text'],
+  input[type='number'],
+  .btn {
+    font-size: 0.9rem;
+  }

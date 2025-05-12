@@ -1,0 +1,21 @@
+/* CheckoutPage.css */
+#paypal-button-container {
+  min-width: 300px;
+  margin: 1.5rem 0;
+  border-radius: 12px;
+}
+
+.paypal-button {
+  background: #003087 !important;
+  border-radius: 8px !important;
+  padding: 14px 35px !important;
+}
+
+.form-check-card {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.form-check-card:hover {
+  transform: scale(1.02);
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Fares Fandouli",
+    "email": "faresfandouli4@gmail.com",
+    "mdp": "123456",
+    "number":"23239164",
+    "addr":"soukra",
+    "datalastpurshis":"29/01/2025",
+    "role": "admin"
+  },
+  {
+    "id": 2,
+    "name": "Jihene Boltane",
+    "email": "jiheneboltane@gmail.com",
+    "mdp": "123456",
+    "number":"99792636",
+    "addr":"carthage",
+    "datalastpurshis":"03/08/2025",
+    "role": "user"
+  },
+  {
+    "id": 3,
+    "name": "Jihene ",
+    "email": "jiheneboltane4@gmail.com",
+    "mdp": "123456",
+    "number":"99792636",
+    "addr":"carthage byrsa",
+    "datalastpurshis":"03/08/2025",
+    "role": "user"
+  }
+]

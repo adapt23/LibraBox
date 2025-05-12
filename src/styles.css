@@ -1,0 +1,27 @@
+/* The sliding effect for the "Continue" item */
+.continue-item {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+  }
+  
+  .continue-item .nav-link {
+    display: block;
+    padding: 10px 15px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    transform: translateX(100%); /* Initially hidden off to the right */
+  }
+  
+  /* When hovered, reveal the "Continue" link */
+  .continue-item:hover .nav-link {
+    opacity: 1;
+    transform: translateX(0); /* Slide the link into view */
+  }
+  
+  .navbar-nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
