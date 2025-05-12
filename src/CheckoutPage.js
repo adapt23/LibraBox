@@ -174,7 +174,7 @@ const CheckoutPage = () => {
   const handlePaymentSuccess = (details) => {
     const invoice = {
       date: new Date().toISOString(),
-      amount: finalTotal,
+      amount: parseFloat(finalTotal), 
       items: [...cart, { 
         title: `Abonnement ${subscriptionType}`, 
         price: subscriptionPrice 
@@ -244,8 +244,8 @@ const CheckoutPage = () => {
               </div>
             </div>
             <div className="mt-3 h4 text-end text-success">
-              Total : <strong>{finalTotal}€</strong>
-            </div>
+  Total : <strong>{(total + subscriptionPrice).toFixed(2)}€</strong>
+</div>
           </div>
         </div>
 
