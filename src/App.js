@@ -11,6 +11,9 @@ import PanierPage from "./PanierPage";
 import BookDetailPage from './BookDetailPage';
 import ContactPage from './ContactPage'
 import AboutPage from './AboutPage';
+import ProcessView from "./ProcessView";
+import AddBookPage from "./AddBookPage";
+import BookListPage from "./BookListPage";
 
 
 const ConfirmationPage = () => (
@@ -23,6 +26,7 @@ const ConfirmationPage = () => (
 
 function App() {
   return (
+    
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -38,7 +42,9 @@ function App() {
         <Route path="/bookdetail" element={<BookDetailPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/about" element={<AboutPage />} />
-
+        <Route path="/process" element={<ProcessView />} />
+        <Route path="/addBook" element={<AddBookPage />} />
+        <Route path="/bookList" element={<BookListPage />} />
       </Routes>
     </Router>
   );

@@ -14,6 +14,7 @@ import {
   MDBBreadcrumbItem
 } from 'mdb-react-ui-kit';
 import { useNavigate } from 'react-router-dom';
+import { QRCodeCanvas } from 'qrcode.react'; // <- QR code import
 
 export default function ProfileStatistics() {
   const [user, setUser] = useState(null);
@@ -41,8 +42,8 @@ export default function ProfileStatistics() {
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
-       }}
-      > 
+      }}
+    >
       <MDBContainer className="container py-5 h-100">
         <MDBRow>
           <MDBCol>
@@ -66,7 +67,7 @@ export default function ProfileStatistics() {
                 </div>
                 <MDBTypography tag="h4">{user ? user.name : "Chargement..."}</MDBTypography>
                 <MDBCardText className="text-muted mb-4">
-                {user ? user.email : "..."} <span className="mx-2">|</span>
+                  {user ? user.email : "..."} <span className="mx-2">|</span>
                   <a href="#!">{user ? user.number : "..."}</a>
                 </MDBCardText>
 
@@ -75,8 +76,6 @@ export default function ProfileStatistics() {
                   <MDBBtn outline floating className="mx-1"><MDBIcon fab icon="twitter" size="lg" /></MDBBtn>
                   <MDBBtn outline floating><MDBIcon fab icon="skype" size="lg" /></MDBBtn>
                 </div>
-
-                {/* <MDBBtn rounded size="lg">Message now</MDBBtn> */}
 
                 <div className="d-flex justify-content-between text-center mt-5 mb-2">
                   <div>
@@ -92,15 +91,36 @@ export default function ProfileStatistics() {
                     <MDBCardText className="small text-muted mb-0">Date Retour</MDBCardText>
                   </div>
                 </div>
+
+                {/* QR Code */}
+                {user && (
+                  <div className="mt-4">
+                    <h5>Mon QR Code</h5>
+                    <QRCodeCanvas
+                      value={JSON.stringify({
+                        name: user.name,
+                        email: user.email,
+                        number: user.number,
+                        role: user.role,
+                      })}
+                      size={150}
+                      bgColor="#ffffff"
+                      fgColor="#000000"
+                      level="H"
+                      includeMargin={true}
+                    />
+                  </div>
+                )}
+
                 {user?.role === "admin" && (
-                <div>
-                <h5 className="text-success">👑 Admin Panel</h5>
-                  <p>Bienvenue, administrateur !</p>
-                  <MDBBtn color="danger" onClick={() => navigate("/admin/users")}>
-                    Gérer les utilisateurs
-                  </MDBBtn>
-                </div>
-                 )}
+                  <div className="mt-4">
+                    <h5 className="text-success">👑 Admin Panel</h5>
+                    <p>Bienvenue, administrateur !</p>
+                    <MDBBtn color="danger" onClick={() => navigate("/admin/users")}>
+                      Gérer les utilisateurs
+                    </MDBBtn>
+                  </div>
+                )}
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
