@@ -1,6 +1,11 @@
 import React from 'react';
 import {
   MDBContainer,
+  MDBRow,
+  MDBCol,
+  MDBCard,
+  MDBCardBody,
+  MDBTypography,
   MDBListGroup,
   MDBListGroupItem,
   MDBIcon,
@@ -8,7 +13,6 @@ import {
 } from 'mdb-react-ui-kit';
 
 export default function Notifications() {
-  // → Données statiques
   const notifications = [
     {
       id: 1,
@@ -30,7 +34,6 @@ export default function Notifications() {
     }
   ];
 
-  // Fonction utilitaire pour formater la date en français
   const formatDate = isoString => {
     const d = new Date(isoString);
     return d.toLocaleString('fr-FR', {
@@ -39,7 +42,6 @@ export default function Notifications() {
     });
   };
 
-  // Choix de couleur du badge selon le type
   const badgeColor = type => {
     switch (type) {
       case 'success': return 'success';
@@ -49,24 +51,47 @@ export default function Notifications() {
   };
 
   return (
-    <MDBContainer className="py-5">
-      <h2 className="mb-4"><MDBIcon icon="bell" className="me-2 text-primary" />Mes Notifications</h2>
-      <MDBListGroup flush>
-        {notifications.map(notif => (
-          <MDBListGroupItem
-            key={notif.id}
-            className="d-flex justify-content-between align-items-center"
-          >
-            <div>
-              <MDBBadge color={badgeColor(notif.type)} pill className="me-2">
-                <MDBIcon icon="bell" />
-              </MDBBadge>
-              {notif.message}
-            </div>
-            <small className="text-muted">{formatDate(notif.date)}</small>
-          </MDBListGroupItem>
-        ))}
-      </MDBListGroup>
-    </MDBContainer>
+    <div
+      style={{
+        backgroundImage: "url('/background libra box.png')",
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        minHeight: '100vh',
+        padding: '40px 0',
+      }}
+    >
+      <MDBContainer>
+        <MDBTypography tag="h2" className="text-center mb-5 text-white">
+          <MDBIcon icon="bell" className="me-2" />
+          Mes Notifications
+        </MDBTypography>
+
+        <MDBRow className="justify-content-center">
+          <MDBCol md="10" lg="8">
+            <MDBCard style={{ backgroundColor: '#f2e8dc', borderRadius: '20px' }}>
+              <MDBCardBody>
+                <MDBListGroup flush>
+                  {notifications.map(notif => (
+                    <MDBListGroupItem
+                      key={notif.id}
+                      className="d-flex justify-content-between align-items-center"
+                    >
+                      <div>
+                        <MDBBadge color={badgeColor(notif.type)} pill className="me-2">
+                          <MDBIcon icon="bell" />
+                        </MDBBadge>
+                        {notif.message}
+                      </div>
+                      <small className="text-muted">{formatDate(notif.date)}</small>
+                    </MDBListGroupItem>
+                  ))}
+                </MDBListGroup>
+              </MDBCardBody>
+            </MDBCard>
+          </MDBCol>
+        </MDBRow>
+      </MDBContainer>
+    </div>
   );
 }
